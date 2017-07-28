@@ -1,0 +1,29 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+	return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('chat/{toUser}', 'ChatController@get')->name('chat');
+Route::post('chat/{chatRoom}', 'ChatController@store')->name('message');
+Route::get('room-chat/{chatRoom}/', 'ChatController@index')->name('roomchat');
+
+Route::get('test', function() {
+	$room = App\ChatRoom::first();
+	dd($room->messages[0]->toArray());
+});

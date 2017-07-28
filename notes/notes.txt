@@ -1,0 +1,9 @@
+Database
+
+messages
+id message_from message_to created_at updated_at deleted_at
+
+
+
+chat_rooms
+id participants created_at updated_at deleted_at
