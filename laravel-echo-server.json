@@ -1,5 +1,5 @@
 {
-	"authHost": "http://laravel-notifications.local",
+	"authHost": "http://localhost/extra/demos/Laravel-Notifications/public",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
