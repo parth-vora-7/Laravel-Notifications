@@ -57,6 +57,8 @@ var postChatURL = "{{ route('message', $chatRoom->id) }}";
 <script>
 	window.Echo.private('App.User.' + window.Laravel.user.id)
     .notification((notification) => {
+    	//app.updateChat(e);
+    	console.log('ss');
         console.log(notification);
     });
 

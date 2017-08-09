@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\BroadcastMessage;
 
-class MessageNotification extends Notification
+class MessageNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -47,12 +47,12 @@ class MessageNotification extends Notification
         ->line('Thank you for using our application!');
     }
 
-    public function toBroadcast($message)
+    public function toBroadcast($notifiable)
     {
       return new BroadcastMessage([
-        'message' => $message,
+        'message' => $notifiable,
         ]);
-  }
+    }
 
     /**
      * Get the array representation of the notification.

@@ -60,10 +60,10 @@ const app = new Vue({
  			}
  		},
  		userIsTyping: function(chatRoomId) {
- 			window.Echo.private(`typing-room-${chatRoomId}`)
+ 			/*window.Echo.private(`typing-room-${chatRoomId}`)
  			.whisper('typing', {
  				name: window.Laravel.user.name
- 			});
+ 			});*/
  		},
  	},
  	mounted: function() {
